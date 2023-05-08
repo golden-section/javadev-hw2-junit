@@ -13,14 +13,22 @@ public class SumCalculatorTests {
     }
 
     @Test
-    public void testCorrectSumCalculation() {
+    public void testSumCalculationOne() {
         Assertions.assertEquals(1, calculator.sum(1));
+    }
+
+    @Test
+    public void testSumCalculationThree() {
         Assertions.assertEquals(6, calculator.sum(3));
     }
 
     @Test
-    public void testException() {
+    public void testExceptionZeroValue() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> calculator.sum(0));
+    }
+
+    @Test
+    public void testExceptionNegativeValue() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> calculator.sum(-3));
     }
 }
